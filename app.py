@@ -10,7 +10,7 @@ st.set_page_config(page_title="Forex AI Agent", page_icon="🤖", layout="center
 # NIDAAMKA LOGIN-KA (PASSWORD PROTECTION)
 # =========================================================
 # Meeshaan ku qor password-ka aad rabto saxiib (Hadda waa 'saxiib123')
-PASSWORD_UKU_TALAGALAY = "saxiib123"
+PASSWORD_UKU_TALAGALAY = "pio54321"
 
 if "authenticated" not in st.session_state:
     st.session_state.authenticated = False
@@ -19,7 +19,7 @@ if not st.session_state.authenticated:
     st.title("🔒 Forex AI - Login")
     st.write("Saxiib, fadlan qor furaha sirta ah si aad u gasho dashboard-ka.")
     
-    user_password = st.text_input("Password-ka", type="pio54321")
+     user_password = st.text_input("Password-ka", type=("default")
     if st.button("Gasho (Login)"):
         if user_password == PASSWORD_UKU_TALAGALAY:
             st.session_state.authenticated = True
