@@ -9,7 +9,7 @@ st.set_page_config(page_title="Forex AI Agent", page_icon="🤖", layout="center
 # =========================================================
 # NIDAAMKA LOGIN-KA (PASSWORD PROTECTION)
 # =========================================================
-# Meeshaan ku qor password-ka aad rabto saxiib (Hadda waa 'saxiib123')
+# 👉 HALKAN KU QOR PASSWORD-KA AAD DOONAYSO SAXIIB (KALIYA BEDDEL ERAGA 'saxiib123')
 PASSWORD_UKU_TALAGALAY = "pio54321"
 
 if "authenticated" not in st.session_state:
@@ -19,14 +19,16 @@ if not st.session_state.authenticated:
     st.title("🔒 Forex AI - Login")
     st.write("Saxiib, fadlan qor furaha sirta ah si aad u gasho dashboard-ka.")
     
-     user_password = st.text_input("Password-ka", type=("default")
+    # Khadkan hoose waa kii qaladka keenay, hadda waan kuu hagaajiyey oo Render waa uu aqbalayaa:
+    user_password = st.text_input("Password-ka")
+    
     if st.button("Gasho (Login)"):
         if user_password == PASSWORD_UKU_TALAGALAY:
             st.session_state.authenticated = True
             st.rerun()
         else:
             st.error("❌ Password-ku waa khalad saxiib, dib u tijaabi!")
-    st.stop() # Wixii koodh ah oo ka dambeeya halkan ma fulayo ilaa laga login gareeyo
+    st.stop() 
 
 # =========================================================
 # WIXII KA DAMBEEYA HALKAN WAA WEBSITE-KII CAADIGA AHAA
@@ -39,7 +41,6 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# 1. TIKTOK-STYLE NAVIGATION BAR
 selected = option_menu(
     menu_title=None,
     options=["Home", "AI Chat", "Journal", "VPS Connect"],
@@ -55,16 +56,13 @@ selected = option_menu(
     }
 )
 
-# [Koodhkii kale ee pajjada sidiisii ayuu u qoran yahay...]
 if selected == "Home":
     st.title("🏠 AI Trading Monitor")
     st.write("Saxiib, halkaan waxaad ka arki kartaa xawaaraha iyo natiijada trades-ka rasmiga ah.")
-    
     col1, col2, col3 = st.columns(3)
     col1.metric(label="Total Trades", value="42", delta="Maanta +5")
     col2.metric(label="Win / Loss Rate", value="76% / 24%", delta="Faa'iido")
     col3.metric(label="Xawaaraha Khadka", value="12 ms", delta="Aad u dhakhso badan", delta_color="inverse")
-    
     st.markdown("---")
     st.subheader("📊 Live Positions")
     trades_data = {"Pair": ["EURUSD", "GBPUSD"], "Nooca": ["BUY", "SELL"], "Lots": [0.50, 0.30], "P&L ($)": [65.00, -14.20]}
